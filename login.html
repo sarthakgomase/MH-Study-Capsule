@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MH Study Capsule | Login</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+background:#050816;
+
+overflow:hidden;
+
+color:white;
+
+}
+
+/* =======================
+Universe Background
+======================= */
+
+.universe{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:
+
+radial-gradient(circle at 20% 20%,rgba(124,58,237,.20),transparent 30%),
+
+radial-gradient(circle at 80% 80%,rgba(37,99,235,.18),transparent 35%),
+
+#050816;
+
+z-index:-5;
+
+}
+
+.universe::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background-image:
+
+radial-gradient(white 1px,transparent 1px);
+
+background-size:55px 55px;
+
+opacity:.15;
+
+animation:stars 60s linear infinite;
+
+}
+
+@keyframes stars{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+100%{
+
+transform:translateY(-300px);
+
+}
+
+}
+
+/* =======================
+Planets
+======================= */
+
+.planet{
+
+position:absolute;
+
+border-radius:50%;
+
+animation:float 8s ease-in-out infinite;
+
+}
+
+.planet1{
+
+width:180px;
+
+height:180px;
+
+background:linear-gradient(135deg,#7C3AED,#A855F7);
+
+top:8%;
+
+right:-50px;
+
+box-shadow:0 0 60px rgba(124,58,237,.35);
+
+}
+
+.planet2{
+
+width:120px;
+
+height:120px;
+
+background:linear-gradient(135deg,#2563EB,#60A5FA);
+
+bottom:8%;
+
+left:-30px;
+
+animation-delay:2s;
+
+box-shadow:0 0 60px rgba(37,99,235,.35);
+
+}
+
+@keyframes float{
+
+50%{
+
+transform:translateY(-20px);
+
+}
+
+}
+
+/* =======================
+Login Container
+======================= */
+
+.container{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+height:100vh;
+
+padding:20px;
+
+}
+
+.login-card{
+
+width:100%;
+
+max-width:380px;
+
+background:rgba(255,255,255,.06);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:25px;
+
+padding:35px 28px;
+
+box-shadow:0 0 40px rgba(124,58,237,.18);
+
+}
+
+.logo{
+
+text-align:center;
+
+font-size:65px;
+
+margin-bottom:10px;
+
+}
+
+.title{
+
+text-align:center;
+
+font-size:28px;
+
+font-weight:700;
+
+margin-bottom:8px;
+
+}
+
+.subtitle{
+
+text-align:center;
+
+color:#CBD5E1;
+
+margin-bottom:30px;
+
+font-size:14px;
+
+}
+.input-box{
+
+margin-bottom:18px;
+
+}
+
+.input-box label{
+
+display:block;
+
+margin-bottom:8px;
+
+font-size:14px;
+
+color:#E2E8F0;
+
+}
+
+.input-box input{
+
+width:100%;
+
+padding:15px;
+
+border:none;
+
+outline:none;
+
+border-radius:14px;
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.10);
+
+color:white;
+
+font-size:15px;
+
+transition:.3s;
+
+}
+
+.input-box input:focus{
+
+border-color:#8B5CF6;
+
+box-shadow:0 0 15px rgba(139,92,246,.35);
+
+}
+
+.password-box{
+
+position:relative;
+
+}
+
+.password-box input{
+
+padding-right:55px;
+
+}
+
+.show-pass{
+
+position:absolute;
+
+right:18px;
+
+top:50%;
+
+transform:translateY(-50%);
+
+cursor:pointer;
+
+font-size:20px;
+
+user-select:none;
+
+}
+
+.forgot{
+
+display:flex;
+
+justify-content:flex-end;
+
+margin-top:8px;
+
+margin-bottom:22px;
+
+}
+
+.forgot a{
+
+text-decoration:none;
+
+color:#A78BFA;
+
+font-size:14px;
+
+}
+
+.login-btn{
+
+width:100%;
+
+padding:15px;
+
+border:none;
+
+border-radius:16px;
+
+background:linear-gradient(135deg,#7C3AED,#2563EB);
+
+color:white;
+
+font-size:17px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.35s;
+
+box-shadow:0 0 25px rgba(124,58,237,.35);
+
+}
+
+.login-btn:hover{
+
+transform:translateY(-4px);
+
+}
+
+.bottom-text{
+
+margin-top:22px;
+
+text-align:center;
+
+color:#CBD5E1;
+
+font-size:14px;
+
+}
+
+.bottom-text a{
+
+text-decoration:none;
+
+color:#A78BFA;
+
+font-weight:600;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="universe">
+
+<div class="planet planet1"></div>
+
+<div class="planet planet2"></div>
+
+</div>
+
+<div class="container">
+
+<div class="login-card">
+
+<div class="logo">🎓</div>
+
+<div class="title">
+
+MH Study Capsule
+
+</div>
+
+<div class="subtitle">
+
+Login to continue your learning journey
+
+</div>
+
+<form action="dashboard.html">
+
+<div class="input-box">
+
+<label>Email</label>
+
+<input
+type="email"
+placeholder="Enter your email"
+required>
+
+</div>
+
+<div class="input-box">
+
+<label>Password</label>
+
+<div class="password-box">
+
+<input
+type="password"
+id="password"
+placeholder="Enter your password"
+required>
+
+<span
+class="show-pass"
+onclick="togglePassword()">
+
+👁
+
+</span>
+
+</div>
+
+</div>
+
+<div class="forgot">
+
+<a href="#">
+
+Forgot Password?
+
+</a>
+
+</div>
+
+<button
+type="submit"
+class="login-btn">
+
+🔐 Login
+
+</button>
+
+<div class="bottom-text">
+
+Don't have an account?
+
+<a href="signup.html">
+
+Create Account
+
+</a>
+
+</div>
+
+</form>
+</div>
+
+</div>
+
+<script>
+
+function togglePassword(){
+
+const password=document.getElementById("password");
+
+if(password.type==="password"){
+
+password.type="text";
+
+}else{
+
+password.type="password";
+
+}
+
+}
+
+/* Card Animation */
+
+const card=document.querySelector(".login-card");
+
+card.animate([
+
+{
+opacity:0,
+transform:"translateY(50px) scale(.9)"
+},
+
+{
+opacity:1,
+transform:"translateY(0) scale(1)"
+}
+
+],{
+
+duration:900,
+easing:"ease-out"
+
+});
+
+/* Disable Right Click */
+
+document.addEventListener("contextmenu",function(e){
+
+e.preventDefault();
+
+});
+
+/* Disable Developer Shortcuts */
+
+document.addEventListener("keydown",function(e){
+
+if(
+e.key==="F12" ||
+
+(e.ctrlKey && e.shiftKey && e.key==="I") ||
+
+(e.ctrlKey && e.shiftKey && e.key==="J") ||
+
+(e.ctrlKey && e.shiftKey && e.key==="C") ||
+
+(e.ctrlKey && e.key==="U")
+
+){
+
+e.preventDefault();
+
+}
+
+});
+
+</script>
+
+</body>
+
+</html>

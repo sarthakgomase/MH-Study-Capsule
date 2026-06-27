@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MH Study Capsule | Class 10</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+background:#050816;
+color:white;
+overflow-x:hidden;
+
+}
+
+/* =====================
+Universe Background
+===================== */
+
+.universe{
+
+position:fixed;
+inset:0;
+z-index:-5;
+
+background:
+
+radial-gradient(circle at 20% 20%,rgba(124,58,237,.22),transparent 30%),
+
+radial-gradient(circle at 80% 80%,rgba(37,99,235,.22),transparent 35%),
+
+#050816;
+
+}
+
+.universe::before{
+
+content:"";
+
+position:absolute;
+inset:0;
+
+background-image:
+radial-gradient(white 1px,transparent 1px);
+
+background-size:60px 60px;
+
+opacity:.15;
+
+animation:stars 60s linear infinite;
+
+}
+
+@keyframes stars{
+
+0%{transform:translateY(0);}
+
+100%{transform:translateY(-400px);}
+
+}
+
+.planet{
+
+position:absolute;
+border-radius:50%;
+animation:float 8s ease-in-out infinite;
+
+}
+
+.planet1{
+
+width:180px;
+height:180px;
+
+background:linear-gradient(135deg,#7C3AED,#A855F7);
+
+top:5%;
+right:-60px;
+
+box-shadow:0 0 60px rgba(124,58,237,.45);
+
+}
+
+.planet2{
+
+width:120px;
+height:120px;
+
+background:linear-gradient(135deg,#2563EB,#60A5FA);
+
+bottom:5%;
+left:-40px;
+
+animation-delay:2s;
+
+box-shadow:0 0 50px rgba(37,99,235,.45);
+
+}
+
+@keyframes float{
+
+50%{
+
+transform:translateY(-20px);
+
+}
+
+}
+
+/* Navbar */
+
+.navbar{
+
+position:sticky;
+
+top:0;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:18px 20px;
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(20px);
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+z-index:100;
+
+}
+
+.logo{
+
+font-size:22px;
+
+font-weight:700;
+
+background:linear-gradient(90deg,#A78BFA,#60A5FA);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+.back{
+
+text-decoration:none;
+
+color:white;
+
+font-size:24px;
+
+}
+
+.container{
+
+padding:25px;
+
+}
+
+.title{
+
+font-size:32px;
+
+font-weight:700;
+
+margin-bottom:8px;
+
+}
+
+.subtitle{
+
+color:#CBD5E1;
+
+margin-bottom:30px;
+
+font-size:15px;
+
+}
+
+.cards{
+
+display:grid;
+
+gap:18px;
+
+}
+ .card{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:20px;
+
+background:rgba(255,255,255,.06);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border-radius:20px;
+
+text-decoration:none;
+
+color:white;
+
+transition:.35s;
+
+}
+
+.card:hover{
+
+transform:translateY(-6px);
+
+border-color:#8B5CF6;
+
+box-shadow:0 0 25px rgba(124,58,237,.35);
+
+}
+
+.left{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+}
+
+.icon{
+
+width:60px;
+
+height:60px;
+
+border-radius:16px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:30px;
+
+background:linear-gradient(135deg,#7C3AED,#2563EB);
+
+}
+
+.name{
+
+font-size:18px;
+
+font-weight:600;
+
+}
+
+.desc{
+
+font-size:13px;
+
+color:#CBD5E1;
+
+margin-top:5px;
+
+}
+
+.arrow{
+
+font-size:28px;
+
+color:#A78BFA;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="universe">
+
+<div class="planet planet1"></div>
+
+<div class="planet planet2"></div>
+
+</div>
+
+<div class="navbar">
+
+<a href="dashboard.html" class="back">←</a>
+
+<div class="logo">
+
+MH Study Capsule
+
+</div>
+
+</div>
+
+<div class="container">
+
+<h1 class="title">
+
+📘 Class 10
+
+</h1>
+
+<p class="subtitle">
+
+Select a study resource below.
+
+</p>
+
+<div class="cards">
+
+<a href="questionandanswer10.html" class="card">
+
+<div class="left">
+
+<div class="icon">❓</div>
+
+<div>
+
+<div class="name">
+
+Questions & Answers
+
+</div>
+
+<div class="desc">
+
+Chapter-wise Questions with Answers
+
+</div>
+
+</div>
+
+</div>
+
+<div class="arrow">➜</div>
+
+</a>
+
+<a href="importantquestions10.html" class="card">
+
+<div class="left">
+
+<div class="icon">⭐</div>
+
+<div>
+
+<div class="name">
+
+Important Questions
+
+</div>
+
+<div class="desc">
+
+Most Expected Board Questions
+
+</div>
+
+</div>
+
+</div>
+
+<div class="arrow">➜</div>
+
+</a>
+
+<a href="questionbank10.html" class="card">
+
+<div class="left">
+
+<div class="icon">📝</div>
+
+<div>
+
+<div class="name">
+
+Question Bank
+
+</div>
+
+<div class="desc">
+
+Practice Questions Chapter-wise
+
+</div>
+
+</div>
+
+</div>
+
+<div class="arrow">➜</div>
+
+</a>
+
+<a href="textbook10.html" class="card">
+
+<div class="left">
+
+<div class="icon">📖</div>
+
+<div>
+
+<div class="name">
+
+Textbooks
+
+</div>
+
+<div class="desc">
+
+Maharashtra State Board Books
+
+</div>
+
+</div>
+
+</div>
+
+<div class="arrow">➜</div>
+
+</a>
+
+<a href="pyqs10.html" class="card">
+
+<div class="left">
+
+<div class="icon">📄</div>
+
+<div>
+
+<div class="name">
+
+Previous Year Question Papers
+
+</div>
+
+<div class="desc">
+
+Board PYQs with Solutions
+
+</div>
+
+</div>
+
+</div>
+
+<div class="arrow">➜</div>
+
+</a>
+
+</div>
+</div>
+
+<footer style="
+margin-top:40px;
+padding:30px 20px;
+text-align:center;
+background:rgba(255,255,255,.05);
+border-top:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(20px);
+">
+
+<h2 style="
+font-size:22px;
+margin-bottom:10px;
+background:linear-gradient(90deg,#A78BFA,#60A5FA);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+">
+
+🎓 MH Study Capsule
+
+</h2>
+
+<p style="
+color:#CBD5E1;
+font-size:14px;
+line-height:1.8;
+">
+
+Premium Study Platform for Maharashtra Board Students
+
+</p>
+
+<div style="margin:20px 0;">
+
+<a href="dashboard.html" style="
+color:#A78BFA;
+text-decoration:none;
+margin:0 10px;
+">Dashboard</a>
+
+<a href="class10.html" style="
+color:#A78BFA;
+text-decoration:none;
+margin:0 10px;
+">Class 10</a>
+
+<a href="login.html" style="
+color:#A78BFA;
+text-decoration:none;
+margin:0 10px;
+">Logout</a>
+
+</div>
+
+<p style="
+color:#94A3B8;
+">
+
+Designed & Developed By
+
+</p>
+
+<h3 style="margin-top:8px;">
+
+Sarthak 19.1
+
+</h3>
+
+<p style="
+margin-top:10px;
+color:#A78BFA;
+">
+
+Version 2.0 Premium
+
+</p>
+
+</footer>
+
+<script>
+
+/* Card Animation */
+
+const cards=document.querySelectorAll(".card");
+
+const observer=new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity="1";
+entry.target.style.transform="translateY(0)";
+
+}
+
+});
+
+});
+
+cards.forEach(card=>{
+
+card.style.opacity="0";
+card.style.transform="translateY(40px)";
+card.style.transition="all .8s ease";
+
+observer.observe(card);
+
+});
+
+</script>
+
+</body>
+
+</html>  

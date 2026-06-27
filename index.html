@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MH Study Capsule Premium</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#050816;
+overflow-x:hidden;
+color:white;
+}
+
+/* ===========================
+   3D Universe Background
+=========================== */
+
+.universe{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-5;
+overflow:hidden;
+background:
+radial-gradient(circle at 20% 20%,rgba(124,58,237,.25),transparent 35%),
+radial-gradient(circle at 80% 70%,rgba(37,99,235,.25),transparent 35%),
+#050816;
+}
+
+.universe::before{
+content:"";
+position:absolute;
+inset:0;
+background-image:
+radial-gradient(white 1px,transparent 1px);
+background-size:55px 55px;
+opacity:.18;
+animation:starsMove 60s linear infinite;
+}
+
+@keyframes starsMove{
+
+0%{
+transform:translateY(0);
+}
+
+100%{
+transform:translateY(-300px);
+}
+
+}
+
+/* Floating Planets */
+
+.planet{
+
+position:absolute;
+border-radius:50%;
+animation:float 8s ease-in-out infinite;
+
+}
+
+.planet1{
+
+width:190px;
+height:190px;
+background:linear-gradient(135deg,#7C3AED,#8B5CF6);
+
+top:6%;
+right:-60px;
+
+box-shadow:0 0 60px rgba(124,58,237,.45);
+
+}
+
+.planet2{
+
+width:120px;
+height:120px;
+
+background:linear-gradient(135deg,#2563EB,#60A5FA);
+
+bottom:8%;
+left:-30px;
+
+animation-delay:2s;
+
+box-shadow:0 0 50px rgba(37,99,235,.45);
+
+}
+
+@keyframes float{
+
+50%{
+
+transform:translateY(-25px);
+
+}
+
+}
+
+/* Shooting Stars */
+
+.star{
+
+position:absolute;
+
+height:2px;
+
+background:linear-gradient(90deg,#fff,transparent);
+
+transform:rotate(-35deg);
+
+opacity:.5;
+
+}
+
+.star1{
+
+width:170px;
+
+top:18%;
+
+left:-20%;
+
+animation:shoot1 8s linear infinite;
+
+}
+
+.star2{
+
+width:140px;
+
+top:45%;
+
+left:-30%;
+
+animation:shoot1 11s linear infinite;
+
+animation-delay:4s;
+
+}
+
+@keyframes shoot1{
+
+from{
+
+transform:translateX(0) rotate(-35deg);
+
+}
+
+to{
+
+transform:translateX(1800px) translateY(600px) rotate(-35deg);
+
+}
+
+}
+
+/* ===================
+Navbar
+=================== */
+
+.navbar{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+
+padding:16px 22px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(18px);
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+z-index:1000;
+
+}
+
+.logo{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+font-size:22px;
+
+font-weight:700;
+
+color:white;
+
+}
+
+.logo img{
+
+width:45px;
+
+height:45px;
+
+border-radius:50%;
+
+}
+
+.menu{
+
+font-size:28px;
+
+cursor:pointer;
+
+}
+
+/* Hero Section */
+
+.hero{
+
+min-height:100vh;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+padding:120px 25px 60px;
+
+}
+
+.hero h1{
+
+font-size:42px;
+
+font-weight:800;
+
+line-height:1.2;
+
+background:linear-gradient(90deg,#A78BFA,#60A5FA);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+margin-bottom:18px;
+
+}
+
+.hero p{
+
+font-size:18px;
+
+color:#CBD5E1;
+
+max-width:420px;
+
+line-height:1.8;
+
+margin-bottom:35px;
+
+}
+/* ===========================
+Buttons
+=========================== */
+
+.btns{
+
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+justify-content:center;
+
+}
+
+.btn{
+
+padding:15px 34px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+font-size:16px;
+
+font-weight:600;
+
+transition:.4s;
+
+}
+
+.login{
+
+background:linear-gradient(135deg,#7C3AED,#2563EB);
+
+color:white;
+
+box-shadow:0 0 30px rgba(124,58,237,.35);
+
+}
+
+.signup{
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.15);
+
+color:white;
+
+backdrop-filter:blur(15px);
+
+}
+
+.btn:hover{
+
+transform:translateY(-5px) scale(1.05);
+
+}
+
+/* ===========================
+Statistics
+=========================== */
+
+.stats{
+
+padding:60px 20px;
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:18px;
+
+max-width:900px;
+
+margin:auto;
+
+}
+
+.stat{
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+border-radius:22px;
+
+padding:25px;
+
+text-align:center;
+
+transition:.3s;
+
+}
+
+.stat:hover{
+
+transform:translateY(-8px);
+
+border-color:#8B5CF6;
+
+}
+
+.stat h2{
+
+font-size:34px;
+
+margin-bottom:10px;
+
+color:#A78BFA;
+
+}
+
+.stat p{
+
+color:#CBD5E1;
+
+}
+
+/* ===========================
+Features
+=========================== */
+
+.features{
+
+padding:80px 20px;
+
+}
+
+.heading{
+
+text-align:center;
+
+font-size:34px;
+
+margin-bottom:40px;
+
+font-weight:700;
+
+}
+
+.feature-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:20px;
+
+max-width:1100px;
+
+margin:auto;
+
+}
+
+.feature{
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border-radius:24px;
+
+padding:28px;
+
+text-align:center;
+
+transition:.35s;
+
+}
+
+.feature:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 0 35px rgba(124,58,237,.35);
+
+}
+
+.feature span{
+
+font-size:48px;
+
+display:block;
+
+margin-bottom:18px;
+
+}
+
+.feature h3{
+
+margin-bottom:15px;
+
+font-size:22px;
+
+}
+
+.feature p{
+
+color:#CBD5E1;
+
+line-height:1.8;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="universe">
+
+<div class="planet planet1"></div>
+
+<div class="planet planet2"></div>
+
+<div class="star star1"></div>
+
+<div class="star star2"></div>
+
+</div>
+
+<nav class="navbar">
+
+<div class="logo">
+
+<img src="logo.png">
+
+MH Study Capsule
+
+</div>
+
+<div class="menu">☰</div>
+
+</nav>
+
+<section class="hero">
+
+<h1>
+
+Learn Smarter.<br>
+
+Score Higher.
+
+</h1>
+
+<p>
+
+Premium Notes, Question Banks, Previous Papers and Textbooks for Maharashtra Board students.
+
+</p>
+
+<div class="btns">
+
+<a href="login.html" class="btn login">
+
+Login
+
+</a>
+
+<a href="signup.html" class="btn signup">
+
+Sign Up
+
+</a>
+
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="stat">
+
+<h2>500+</h2>
+
+<p>Premium Notes</p>
+
+</div>
+
+<div class="stat">
+
+<h2>150+</h2>
+
+<p>Question Banks</p>
+
+</div>
+
+<div class="stat">
+
+<h2>100+</h2>
+
+<p>PYQs</p>
+
+</div>
+
+<div class="stat">
+
+<h2>24×7</h2>
+
+<p>Learning Access</p>
+
+</div>
+
+</section>
+
+<section class="features">
+
+<h2 class="heading">
+
+✨ Why Choose MH Study Capsule?
+
+</h2>
+
+<div class="feature-grid">
+
+<div class="feature">
+
+<span>📚</span>
+
+<h3>Premium Notes</h3>
+
+<p>Easy language notes specially designed for Maharashtra Board students.</p>
+
+</div>
+
+<div class="feature">
+
+<span>⭐</span>
+
+<h3>Important Questions</h3>
+
+<p>Most expected board examination questions with answers.</p>
+
+</div>
+
+<div class="feature">
+
+<span>📄</span>
+
+<h3>Previous Papers</h3>
+
+<p>Solve previous year papers and improve your confidence.</p>
+
+</div>
+  <div class="feature">
+
+<span>📖</span>
+
+<h3>Textbooks</h3>
+
+<p>Read Maharashtra State Board textbooks anytime, anywhere.</p>
+
+</div>
+
+<div class="feature">
+
+<span>🎯</span>
+
+<h3>Board Preparation</h3>
+
+<p>Smart study material specially designed for scoring 95%+ in board exams.</p>
+
+</div>
+
+<div class="feature">
+
+<span>🚀</span>
+
+<h3>Fast Learning</h3>
+
+<p>Save time with concise notes, chapter-wise practice, and quick revision.</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section style="padding:70px 20px;text-align:center;">
+
+<h2 style="font-size:34px;margin-bottom:20px;">
+
+Ready to Start Learning?
+
+</h2>
+
+<p style="max-width:600px;margin:auto;color:#CBD5E1;line-height:1.8;">
+
+Join thousands of Maharashtra Board students using MH Study Capsule to prepare smarter for Class 10, 11 and 12.
+
+</p>
+
+<div class="btns" style="margin-top:35px;">
+
+<a href="login.html" class="btn login">
+
+Get Started
+
+</a>
+
+</div>
+
+</section>
+
+<footer style="padding:45px 20px;text-align:center;background:rgba(255,255,255,.05);border-top:1px solid rgba(255,255,255,.08);">
+
+<h2 style="margin-bottom:10px;">
+
+🎓 MH Study Capsule
+
+</h2>
+
+<p style="color:#CBD5E1;">
+
+Premium Learning Platform for Maharashtra Board Students
+
+</p>
+
+<br>
+
+<p style="color:#94A3B8;">
+
+❤️ Design & Developed By
+
+</p>
+
+<h3 style="margin-top:8px;">
+
+Sarthak 19.1
+
+</h3>
+
+<br>
+
+<p style="color:#A78BFA;">
+
+Version 2.0 Premium
+
+</p>
+
+</footer>
+
+<script>
+
+const cards=document.querySelectorAll('.feature,.stat');
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity='1';
+
+entry.target.style.transform='translateY(0)';
+
+}
+
+});
+
+});
+
+cards.forEach(card=>{
+
+card.style.opacity='0';
+
+card.style.transform='translateY(40px)';
+
+card.style.transition='all .8s ease';
+
+observer.observe(card);
+
+});
+
+</script>
+
+</body>
+
+</html>

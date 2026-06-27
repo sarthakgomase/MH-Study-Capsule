@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MH Study Capsule | Create Account</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+background:#050816;
+color:white;
+overflow-x:hidden;
+overflow-y:auto;
+min-height:100vh;
+
+}
+
+/* ===============================
+Universe Background
+================================ */
+
+.universe{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-10;
+
+background:
+radial-gradient(circle at 20% 20%,rgba(124,58,237,.22),transparent 30%),
+radial-gradient(circle at 80% 75%,rgba(37,99,235,.22),transparent 35%),
+#050816;
+
+}
+
+.universe::before{
+
+content:"";
+
+position:absolute;
+inset:0;
+
+background-image:
+radial-gradient(white 1px,transparent 1px);
+
+background-size:60px 60px;
+
+opacity:.15;
+
+animation:stars 60s linear infinite;
+
+}
+
+@keyframes stars{
+
+0%{
+transform:translateY(0);
+}
+
+100%{
+transform:translateY(-400px);
+}
+
+}
+
+/* Floating Planets */
+
+.planet{
+
+position:absolute;
+
+border-radius:50%;
+
+animation:float 8s ease-in-out infinite;
+
+}
+
+.planet1{
+
+width:180px;
+height:180px;
+
+background:linear-gradient(135deg,#7C3AED,#A855F7);
+
+top:5%;
+right:-60px;
+
+box-shadow:0 0 60px rgba(124,58,237,.45);
+
+}
+
+.planet2{
+
+width:120px;
+height:120px;
+
+background:linear-gradient(135deg,#2563EB,#60A5FA);
+
+bottom:5%;
+left:-40px;
+
+animation-delay:2s;
+
+box-shadow:0 0 50px rgba(37,99,235,.45);
+
+}
+
+@keyframes float{
+
+50%{
+
+transform:translateY(-20px);
+
+}
+
+}
+
+/* ===============================
+Signup Container
+================================ */
+
+.container{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+min-height:100vh;
+
+padding:40px 20px;
+
+}
+
+.signup-card{
+
+width:100%;
+max-width:390px;
+
+background:rgba(255,255,255,.06);
+
+backdrop-filter:blur(22px);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:26px;
+
+padding:35px 28px;
+
+box-shadow:0 0 45px rgba(124,58,237,.22);
+
+animation:card 1s ease;
+
+}
+
+@keyframes card{
+
+from{
+
+opacity:0;
+transform:translateY(60px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+.logo{
+
+text-align:center;
+
+font-size:60px;
+
+margin-bottom:10px;
+
+}
+
+.title{
+
+text-align:center;
+
+font-size:28px;
+
+font-weight:700;
+
+margin-bottom:8px;
+
+background:linear-gradient(90deg,#A78BFA,#60A5FA);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+.subtitle{
+
+text-align:center;
+
+font-size:14px;
+
+color:#CBD5E1;
+
+margin-bottom:28px;
+
+}
+.input-box{
+
+margin-bottom:18px;
+
+}
+
+.input-box label{
+
+display:block;
+
+margin-bottom:8px;
+
+font-size:14px;
+
+color:#E2E8F0;
+
+font-weight:500;
+
+}
+
+.input-box input{
+
+width:100%;
+
+padding:15px 18px;
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.10);
+
+border-radius:15px;
+
+outline:none;
+
+color:white;
+
+font-size:15px;
+
+transition:.35s;
+
+}
+
+.input-box input::placeholder{
+
+color:#94A3B8;
+
+}
+
+.input-box input:focus{
+
+border-color:#8B5CF6;
+
+box-shadow:0 0 18px rgba(124,58,237,.35);
+
+}
+
+.password-box{
+
+position:relative;
+
+}
+
+.password-box input{
+
+padding-right:55px;
+
+}
+
+.show-pass{
+
+position:absolute;
+
+right:18px;
+
+top:50%;
+
+transform:translateY(-50%);
+
+cursor:pointer;
+
+font-size:20px;
+
+}
+
+.signup-btn{
+
+width:100%;
+
+padding:15px;
+
+margin-top:10px;
+
+border:none;
+
+border-radius:15px;
+
+background:linear-gradient(135deg,#7C3AED,#2563EB);
+
+color:white;
+
+font-size:17px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.35s;
+
+box-shadow:0 0 25px rgba(124,58,237,.35);
+
+}
+
+.signup-btn:hover{
+
+transform:translateY(-5px);
+
+}
+
+.login-link{
+
+text-align:center;
+
+margin-top:22px;
+
+font-size:14px;
+
+color:#CBD5E1;
+
+}
+
+.login-link a{
+
+text-decoration:none;
+
+color:#A78BFA;
+
+font-weight:600;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="universe">
+
+<div class="planet planet1"></div>
+
+<div class="planet planet2"></div>
+
+</div>
+
+<div class="container">
+
+<div class="signup-card">
+
+<div class="logo">🎓</div>
+
+<div class="title">
+
+MH Study Capsule
+
+</div>
+
+<div class="subtitle">
+
+Create your Premium Account
+
+</div>
+
+<form id="signupForm">
+
+<div class="input-box">
+
+<label>Full Name</label>
+
+<input
+type="text"
+placeholder="Enter your full name"
+required>
+
+</div>
+
+<div class="input-box">
+
+<label>Email Address</label>
+
+<input
+type="email"
+placeholder="Enter your email"
+required>
+
+</div>
+
+<div class="input-box">
+
+<label>Mobile Number</label>
+
+<input
+type="tel"
+placeholder="Enter mobile number"
+maxlength="10"
+required>
+
+</div>
+
+<div class="input-box">
+
+<label>Password</label>
+
+<div class="password-box">
+
+<input
+type="password"
+id="password"
+placeholder="Create password"
+required>
+
+<span
+class="show-pass"
+onclick="togglePassword('password')">
+
+👁️
+
+</span>
+
+</div>
+
+</div>
+
+<div class="input-box">
+
+<label>Confirm Password</label>
+
+<div class="password-box">
+
+<input
+type="password"
+id="confirmPassword"
+placeholder="Confirm password"
+required>
+
+<span
+class="show-pass"
+onclick="togglePassword('confirmPassword')">
+
+👁️
+
+</span>
+
+</div>
+
+</div>
+
+<button
+type="submit"
+class="signup-btn">
+
+🚀 Create Account
+
+</button>
+
+<div class="login-link">
+
+Already have an account?
+
+<a href="login.html">
+
+Login
+
+</a>
+
+</div>
+
+</form>
+</div>
+
+</div>
+
+<footer style="
+margin-top:30px;
+padding:25px;
+text-align:center;
+background:rgba(255,255,255,.05);
+border-top:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(15px);
+">
+
+<h2 style="
+font-size:22px;
+margin-bottom:10px;
+background:linear-gradient(90deg,#A78BFA,#60A5FA);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+">
+
+🎓 MH Study Capsule
+
+</h2>
+
+<p style="
+color:#CBD5E1;
+line-height:1.8;
+font-size:14px;
+">
+
+Premium Learning Platform for Maharashtra Board Students
+
+</p>
+
+<div style="margin:18px 0;">
+
+<a href="index.html" style="
+color:#A78BFA;
+text-decoration:none;
+margin:0 10px;
+">Home</a>
+
+<a href="login.html" style="
+color:#A78BFA;
+text-decoration:none;
+margin:0 10px;
+">Login</a>
+
+<a href="signup.html" style="
+color:#A78BFA;
+text-decoration:none;
+margin:0 10px;
+">Sign Up</a>
+
+</div>
+
+<p style="color:#94A3B8;">
+
+Designed & Developed By
+
+</p>
+
+<h3 style="margin-top:8px;">
+
+Sarthak 19.1
+
+</h3>
+
+<p style="
+margin-top:10px;
+color:#A78BFA;
+">
+
+Version 2.0 Premium
+
+</p>
+
+</footer>
+
+<script>
+
+function togglePassword(id){
+
+const input=document.getElementById(id);
+
+if(input.type==="password"){
+
+input.type="text";
+
+}else{
+
+input.type="password";
+
+}
+
+}
+
+document.getElementById("signupForm").addEventListener("submit",function(e){
+
+const pass=document.getElementById("password").value;
+
+const confirm=document.getElementById("confirmPassword").value;
+
+if(pass!==confirm){
+
+e.preventDefault();
+
+alert("Passwords do not match!");
+
+return;
+
+}
+
+if(pass.length<6){
+
+e.preventDefault();
+
+alert("Password must be at least 6 characters.");
+
+return;
+
+}
+
+/* Later you'll replace this with Firebase signup */
+
+window.location.href="dashboard.html";
+
+});
+
+/* Disable Right Click */
+
+document.addEventListener("contextmenu",e=>e.preventDefault());
+
+/* Disable Some Shortcuts */
+
+document.addEventListener("keydown",function(e){
+
+if(
+
+e.key==="F12" ||
+
+(e.ctrlKey && e.shiftKey && e.key==="I") ||
+
+(e.ctrlKey && e.shiftKey && e.key==="J") ||
+
+(e.ctrlKey && e.shiftKey && e.key==="C") ||
+
+(e.ctrlKey && e.key==="U")
+
+){
+
+e.preventDefault();
+
+}
+
+});
+
+</script>
+
+</body>
+</html>  

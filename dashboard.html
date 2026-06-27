@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MH Study Capsule | Dashboard</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+background:#050816;
+color:white;
+overflow-x:hidden;
+
+}
+
+/* ===========================
+Universe Background
+=========================== */
+
+.universe{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-5;
+
+background:
+radial-gradient(circle at 20% 20%,rgba(124,58,237,.22),transparent 30%),
+radial-gradient(circle at 80% 80%,rgba(37,99,235,.22),transparent 35%),
+#050816;
+
+}
+
+.universe::before{
+
+content:"";
+
+position:absolute;
+inset:0;
+
+background-image:
+radial-gradient(white 1px,transparent 1px);
+
+background-size:60px 60px;
+
+opacity:.15;
+
+animation:stars 60s linear infinite;
+
+}
+
+@keyframes stars{
+
+0%{
+transform:translateY(0);
+}
+
+100%{
+transform:translateY(-400px);
+}
+
+}
+
+/* Floating Planets */
+
+.planet{
+
+position:absolute;
+border-radius:50%;
+animation:float 8s ease-in-out infinite;
+
+}
+
+.planet1{
+
+width:180px;
+height:180px;
+
+background:linear-gradient(135deg,#7C3AED,#A855F7);
+
+top:5%;
+right:-60px;
+
+box-shadow:0 0 60px rgba(124,58,237,.45);
+
+}
+
+.planet2{
+
+width:120px;
+height:120px;
+
+background:linear-gradient(135deg,#2563EB,#60A5FA);
+
+bottom:5%;
+left:-40px;
+
+animation-delay:2s;
+
+box-shadow:0 0 50px rgba(37,99,235,.45);
+
+}
+
+@keyframes float{
+
+50%{
+
+transform:translateY(-20px);
+
+}
+
+}
+
+/* ===========================
+Navbar
+=========================== */
+
+.navbar{
+
+position:sticky;
+top:0;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:18px 20px;
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(18px);
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+z-index:100;
+
+}
+
+.logo{
+
+font-size:22px;
+
+font-weight:700;
+
+background:linear-gradient(90deg,#A78BFA,#60A5FA);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+.profile{
+
+width:45px;
+height:45px;
+
+border-radius:50%;
+
+background:linear-gradient(135deg,#7C3AED,#2563EB);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:20px;
+
+}
+
+/* ===========================
+Container
+=========================== */
+
+.container{
+
+padding:20px;
+
+}
+
+.welcome{
+
+font-size:28px;
+
+font-weight:700;
+
+margin-top:10px;
+
+}
+
+.subtitle{
+
+color:#CBD5E1;
+
+margin-top:8px;
+
+margin-bottom:25px;
+
+}
+
+/* Search */
+
+.search{
+
+width:100%;
+
+padding:15px;
+
+border:none;
+
+outline:none;
+
+border-radius:15px;
+
+background:rgba(255,255,255,.06);
+
+border:1px solid rgba(255,255,255,.08);
+
+color:white;
+
+font-size:15px;
+
+margin-bottom:25px;
+
+}
+
+.search::placeholder{
+
+color:#94A3B8;
+
+}
+.cards{
+
+display:grid;
+
+grid-template-columns:1fr;
+
+gap:18px;
+
+margin-top:10px;
+
+}
+
+.card{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:20px;
+
+background:rgba(255,255,255,.06);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border-radius:20px;
+
+text-decoration:none;
+
+color:white;
+
+transition:.35s;
+
+}
+
+.card:hover{
+
+transform:translateY(-6px);
+
+border-color:#8B5CF6;
+
+box-shadow:0 0 25px rgba(124,58,237,.35);
+
+}
+
+.card-left{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+}
+
+.icon{
+
+width:60px;
+
+height:60px;
+
+border-radius:16px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:30px;
+
+background:linear-gradient(135deg,#7C3AED,#2563EB);
+
+}
+
+.card-title{
+
+font-size:18px;
+
+font-weight:600;
+
+}
+
+.card-sub{
+
+font-size:13px;
+
+color:#CBD5E1;
+
+margin-top:4px;
+
+}
+
+.arrow{
+
+font-size:28px;
+
+color:#A78BFA;
+
+}
+
+/* Quick Access */
+
+.section{
+
+margin-top:35px;
+
+margin-bottom:18px;
+
+font-size:22px;
+
+font-weight:700;
+
+}
+
+.quick-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:15px;
+
+}
+
+.quick{
+
+padding:20px;
+
+text-align:center;
+
+background:rgba(255,255,255,.05);
+
+border-radius:18px;
+
+border:1px solid rgba(255,255,255,.08);
+
+text-decoration:none;
+
+color:white;
+
+transition:.3s;
+
+}
+
+.quick:hover{
+
+transform:translateY(-5px);
+
+border-color:#8B5CF6;
+
+}
+
+.quick span{
+
+font-size:34px;
+
+display:block;
+
+margin-bottom:10px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="universe">
+
+<div class="planet planet1"></div>
+
+<div class="planet planet2"></div>
+
+</div>
+
+<div class="navbar">
+
+<div class="logo">
+
+MH Study Capsule
+
+</div>
+
+<div class="profile">
+
+👤
+
+</div>
+
+</div>
+
+<div class="container">
+
+<h1 class="welcome">
+
+Welcome, Student 👋
+
+</h1>
+
+<p class="subtitle">
+
+Choose your class and continue learning.
+
+</p>
+
+<input
+type="text"
+class="search"
+placeholder="🔍 Search Notes, PYQs, Question Banks...">
+
+<div class="cards">
+
+<a href="class10.html" class="card">
+
+<div class="card-left">
+
+<div class="icon">📘</div>
+
+<div>
+
+<div class="card-title">
+
+Class 10
+
+</div>
+
+<div class="card-sub">
+
+Notes • PYQs • Textbooks
+
+</div>
+
+</div>
+
+</div>
+
+<div class="arrow">➜</div>
+
+</a>
+
+<a href="class11.html" class="card">
+
+<div class="card-left">
+
+<div class="icon">📗</div>
+
+<div>
+
+<div class="card-title">
+
+Class 11
+
+</div>
+
+<div class="card-sub">
+
+Science 
+
+</div>
+
+</div>
+
+</div>
+
+<div class="arrow">➜</div>
+
+</a>
+
+<a href="class12.html" class="card">
+
+<div class="card-left">
+
+<div class="icon">📕</div>
+
+<div>
+
+<div class="card-title">
+
+Class 12
+
+</div>
+
+<div class="card-sub">
+
+Board Preparation & CET
+
+</div>
+
+</div>
+
+</div>
+
+<div class="arrow">➜</div>
+
+</a>
+
+</div>
+
+<h2 class="section">
+
+⭐ Quick Access
+
+</h2>
+
+<div class="quick-grid">
+
+<a href="notes.html" class="quick">
+
+<span>📚</span>
+
+Notes
+
+</a>
+
+<a href="questionandanswer10.html" class="quick">
+
+<span>❓</span>
+
+Q & Answer
+
+</a>
+
+<a href="pyqs10.html" class="quick">
+
+<span>📝</span>
+
+PYQs
+
+</a>
+
+<a href="questionbank10.html" class="quick">
+
+<span>📖</span>
+
+Question Bank
+
+</a>
+
+<a href="textbook10.html" class="quick">
+
+<span>📕</span>
+
+Textbooks
+
+</a>
+
+<a href="about.html" class="quick">
+
+<span>ℹ️</span>
+
+About
+
+</a>
+
+</div>
+ </div>
+
+<footer style="
+margin-top:40px;
+padding:30px 20px;
+text-align:center;
+background:rgba(255,255,255,.05);
+border-top:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(20px);
+">
+
+<h2 style="
+font-size:22px;
+margin-bottom:10px;
+background:linear-gradient(90deg,#A78BFA,#60A5FA);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+">
+
+🎓 MH Study Capsule
+
+</h2>
+
+<p style="
+color:#CBD5E1;
+font-size:14px;
+line-height:1.8;
+">
+
+One Platform for Maharashtra Board Students
+
+</p>
+
+<div style="margin:20px 0;">
+
+<a href="index.html" style="
+color:#A78BFA;
+text-decoration:none;
+margin:0 10px;
+">Home</a>
+
+<a href="class10.html" style="
+color:#A78BFA;
+text-decoration:none;
+margin:0 10px;
+">Class 10</a>
+
+<a href="class11.html" style="
+color:#A78BFA;
+text-decoration:none;
+margin:0 10px;
+">Class 11</a>
+
+<a href="class12.html" style="
+color:#A78BFA;
+text-decoration:none;
+margin:0 10px;
+">Class 12</a>
+
+</div>
+
+<p style="color:#94A3B8;">
+Designed & Developed By
+</p>
+
+<h3 style="margin-top:8px;">
+Sarthak 19.1
+</h3>
+
+<p style="
+margin-top:10px;
+color:#A78BFA;
+">
+Version 2.0 Premium
+</p>
+
+</footer>
+
+<script>
+
+/* Card Animation */
+
+const items=document.querySelectorAll(".card,.quick");
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity="1";
+entry.target.style.transform="translateY(0)";
+
+}
+
+});
+
+});
+
+items.forEach(item=>{
+
+item.style.opacity="0";
+item.style.transform="translateY(40px)";
+item.style.transition="all .8s ease";
+
+observer.observe(item);
+
+});
+
+/* Search Filter */
+
+const search=document.querySelector(".search");
+
+search.addEventListener("keyup",function(){
+
+const value=this.value.toLowerCase();
+
+document.querySelectorAll(".card,.quick").forEach(item=>{
+
+item.style.display=item.innerText.toLowerCase().includes(value)
+?""
+:"none";
+
+});
+
+});
+
+/* Disable Right Click */
+
+document.addEventListener("contextmenu",e=>e.preventDefault());
+
+/* Disable Some Shortcuts */
+
+document.addEventListener("keydown",function(e){
+
+if(
+
+e.key==="F12" ||
+
+(e.ctrlKey && e.shiftKey && e.key==="I") ||
+
+(e.ctrlKey && e.shiftKey && e.key==="J") ||
+
+(e.ctrlKey && e.shiftKey && e.key==="C") ||
+
+(e.ctrlKey && e.key==="U")
+
+){
+
+e.preventDefault();
+
+}
+
+});
+
+</script>
+
+</body>
+</html> 
