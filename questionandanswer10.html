@@ -3,10 +3,9 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Class 10 - Questions & Answers</title>
+<title>Class 10 Question & Answers | MH Study Capsule</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -17,93 +16,88 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
 
-background:#050816;
+background:
+radial-gradient(circle at top,#24123f,#090B18 60%,#05060D);
 
-color:white;
+color:#fff;
 
 overflow-x:hidden;
 
 }
 
-/* Universe */
-
-.universe{
-
-position:fixed;
-
-inset:0;
-
-z-index:-5;
-
-background:
-
-radial-gradient(circle at 20% 20%,rgba(124,58,237,.22),transparent 30%),
-
-radial-gradient(circle at 80% 80%,rgba(37,99,235,.22),transparent 35%),
-
-#050816;
-
-}
-
-.universe::before{
+body::before{
 
 content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
 
-position:absolute;
+background-image:
+radial-gradient(rgba(255,255,255,.15) 1px,transparent 1px);
 
-inset:0;
+background-size:45px 45px;
 
-background-image:radial-gradient(white 1px,transparent 1px);
+opacity:.25;
 
-background-size:60px 60px;
-
-opacity:.15;
-
-animation:stars 60s linear infinite;
-
-}
-
-@keyframes stars{
-
-0%{transform:translateY(0);}
-
-100%{transform:translateY(-400px);}
+z-index:-1;
 
 }
 
-.navbar{
+header{
 
 position:sticky;
-
 top:0;
+z-index:100;
 
-padding:18px;
+padding:15px;
 
 display:flex;
-
+justify-content:center;
 align-items:center;
 
-justify-content:space-between;
+background:rgba(10,10,20,.75);
 
-background:rgba(255,255,255,.05);
-
-backdrop-filter:blur(18px);
+backdrop-filter:blur(20px);
 
 border-bottom:1px solid rgba(255,255,255,.08);
 
 }
 
+.back{
+
+position:absolute;
+left:18px;
+
+font-size:24px;
+
+text-decoration:none;
+
+color:#fff;
+
+transition:.3s;
+
+}
+
+.back:hover{
+
+color:#8B5CF6;
+
+}
+
 .logo{
 
-font-size:22px;
+font-size:24px;
 
 font-weight:700;
 
-background:linear-gradient(90deg,#A78BFA,#60A5FA);
+background:linear-gradient(90deg,#8B5CF6,#3B82F6);
 
 -webkit-background-clip:text;
 
@@ -111,19 +105,14 @@ background:linear-gradient(90deg,#A78BFA,#60A5FA);
 
 }
 
-.back{
-
-color:white;
-
-text-decoration:none;
-
-font-size:24px;
-
-}
-
 .container{
 
-padding:20px;
+width:94%;
+max-width:900px;
+
+margin:auto;
+
+padding:25px 0;
 
 }
 
@@ -137,19 +126,51 @@ margin-bottom:8px;
 
 }
 
+.title span{
+
+color:#FFD700;
+
+}
+
 .subtitle{
 
-color:#CBD5E1;
+font-size:14px;
+
+color:#B8C0D9;
 
 margin-bottom:25px;
 
 }
 
-.grid{
+.search{
 
-display:grid;
+width:100%;
 
-gap:15px;
+padding:14px 18px;
+
+border:none;
+
+outline:none;
+
+border-radius:16px;
+
+background:rgba(255,255,255,.08);
+
+color:#fff;
+
+font-size:14px;
+
+margin-bottom:25px;
+
+}
+
+.section-title{
+
+font-size:22px;
+
+color:#8B5CF6;
+
+margin:30px 0 15px;
 
 }
 
@@ -157,25 +178,27 @@ gap:15px;
 
 display:flex;
 
+justify-content:space-between;
+
 align-items:center;
 
-gap:15px;
+padding:15px;
 
-padding:18px;
+margin-bottom:15px;
 
-background:rgba(255,255,255,.05);
-
-border:1px solid rgba(255,255,255,.08);
-
-border-radius:18px;
-
-backdrop-filter:blur(20px);
+border-radius:16px;
 
 text-decoration:none;
 
-color:white;
+color:#fff;
 
-transition:.3s;
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.35s;
 
 }
 
@@ -183,35 +206,62 @@ transition:.3s;
 
 transform:translateY(-5px);
 
-border-color:#8B5CF6;
+background:rgba(139,92,246,.18);
+
+box-shadow:0 10px 25px rgba(139,92,246,.25);
+
+}
+
+.left{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
 
 }
 
 .icon{
 
-width:55px;
+width:58px;
+height:58px;
 
-height:55px;
-
-border-radius:15px;
+border-radius:14px;
 
 display:flex;
-
+align-items:center;
 justify-content:center;
 
-align-items:center;
+font-size:22px;
 
 background:linear-gradient(135deg,#7C3AED,#2563EB);
 
-font-size:24px;
+}
+
+.text h3{
+
+font-size:16px;
+
+font-weight:600;
 
 }
 
-.name{
+.text p{
 
-font-size:17px;
+font-size:12px;
 
-font-weight:600;
+margin-top:4px;
+
+color:#CBD5E1;
+
+}
+
+.arrow{
+
+font-size:26px;
+
+color:#8B5CF6;
 
 }
 
@@ -221,208 +271,319 @@ font-weight:600;
 
 <body>
 
-<div class="universe"></div>
-
-<div class="navbar">
+<header>
 
 <a href="class10.html" class="back">←</a>
 
-<div class="logo">
+<div class="logo">MH Study Capsule</div>
 
-MH Study Capsule
-
-</div>
-
-</div>
+</header>
 
 <div class="container">
 
-<div class="title">
+<h1 class="title">
 
-❓ Questions & Answers
+<span>📘</span> Question & Answers
 
-</div>
+</h1>
 
-<div class="subtitle">
+<p class="subtitle">
 
-Science Part 1
+Maharashtra SSC Board • Class 10 Science
 
-</div>
+</p>
 
-<div class="grid">
+<input
+type="text"
+id="search"
+class="search"
+placeholder="🔍 Search Chapter">
 
-<a href="Pdfs/sciencep1ch1.pdf" class="card">
+<h2 class="section-title">
 
+🧪 Science Part 1
+
+</h2>
+<a href="https://sarthakgomase.github.io/MH-Study-Capsule/sciencep1ch1.pdf" target="_blank" class="card">
+
+<div class="left">
 <div class="icon">1️⃣</div>
+<div class="text">
+<h3>Gravitation</h3>
+<p>Question & Answers PDF</p>
+</div>
+</div>
 
-<div class="name">Gravitation</div>
+<div class="arrow">➜</div>
 
 </a>
 
-<a href="Pdfs/sciencep1ch2.pdf" class="card">
+<a href="https://sarthakgomase.github.io/MH-Study-Capsule/sciencep1ch2.pdf" target="_blank" class="card">
 
+<div class="left">
 <div class="icon">2️⃣</div>
+<div class="text">
+<h3>Periodic Classification of Elements</h3>
+<p>Question & Answers PDF</p>
+</div>
+</div>
 
-<div class="name">Periodic Classification of Elements</div>
+<div class="arrow">➜</div>
 
 </a>
 
-<a href="Pdfs/sciencep1ch3.pdf" class="card">
+<a href="https://sarthakgomase.github.io/MH-Study-Capsule/sciencep1ch3.pdf" target="_blank" class="card">
 
+<div class="left">
 <div class="icon">3️⃣</div>
+<div class="text">
+<h3>Chemical Reactions and Equations</h3>
+<p>Question & Answers PDF</p>
+</div>
+</div>
 
-<div class="name">Chemical Reactions and Equations</div>
+<div class="arrow">➜</div>
 
 </a>
-<a href="Pdfs/sciencep1ch4.pdf" class="card">
 
+<a href="https://sarthakgomase.github.io/MH-Study-Capsule/sciencep1ch4.pdf" target="_blank" class="card">
+
+<div class="left">
 <div class="icon">4️⃣</div>
+<div class="text">
+<h3>Effects of Electric Current</h3>
+<p>Question & Answers PDF</p>
+</div>
+</div>
 
-<div class="name">Effects of Electric Current</div>
+<div class="arrow">➜</div>
 
 </a>
 
-<a href="Pdfs/sciencep1ch5.pdf" class="card">
+<a href="https://sarthakgomase.github.io/MH-Study-Capsule/sciencep1ch5.pdf" target="_blank" class="card">
 
+<div class="left">
 <div class="icon">5️⃣</div>
+<div class="text">
+<h3>Heat</h3>
+<p>Question & Answers PDF</p>
+</div>
+</div>
 
-<div class="name">Heat</div>
+<div class="arrow">➜</div>
 
 </a>
+<a href="https://sarthakgomase.github.io/MH-Study-Capsule/sciencep1ch6.pdf" target="_blank" class="card">
 
-<a href="Pdfs/sciencep1ch6.pdf" class="card">
-
+<div class="left">
 <div class="icon">6️⃣</div>
+<div class="text">
+<h3>Refraction of Light</h3>
+<p>Question & Answers PDF</p>
+</div>
+</div>
 
-<div class="name">Refraction of Light</div>
+<div class="arrow">➜</div>
 
 </a>
 
-<a href="Pdfs/sciencep1ch7.pdf" class="card">
+<a href="https://sarthakgomase.github.io/MH-Study-Capsule/sciencep1ch7.pdf" target="_blank" class="card">
 
+<div class="left">
 <div class="icon">7️⃣</div>
+<div class="text">
+<h3>Lenses</h3>
+<p>Question & Answers PDF</p>
+</div>
+</div>
 
-<div class="name">Lenses</div>
+<div class="arrow">➜</div>
 
 </a>
 
-<a href="Pdfs/sciencep1ch8.pdf" class="card">
+<a href="https://sarthakgomase.github.io/MH-Study-Capsule/sciencep1ch8.pdf" target="_blank" class="card">
 
+<div class="left">
 <div class="icon">8️⃣</div>
+<div class="text">
+<h3>Metallurgy</h3>
+<p>Question & Answers PDF</p>
+</div>
+</div>
 
-<div class="name">Metallurgy</div>
+<div class="arrow">➜</div>
 
 </a>
 
-<a href="Pdfs/sciencep1ch9.pdf" class="card">
+<a href="https://sarthakgomase.github.io/MH-Study-Capsule/sciencep1ch9.pdf" target="_blank" class="card">
 
+<div class="left">
 <div class="icon">9️⃣</div>
+<div class="text">
+<h3>Carbon Compounds</h3>
+<p>Question & Answers PDF</p>
+</div>
+</div>
 
-<div class="name">Carbon Compounds</div>
+<div class="arrow">➜</div>
 
 </a>
 
-<a href="Pdfs/sciencep1ch10.pdf" class="card">
+<a href="https://sarthakgomase.github.io/MH-Study-Capsule/sciencep1ch10.pdf" target="_blank" class="card">
 
+<div class="left">
 <div class="icon">🔟</div>
+<div class="text">
+<h3>Space Missions</h3>
+<p>Question & Answers PDF</p>
+</div>
+</div>
 
-<div class="name">Space Missions</div>
+<div class="arrow">➜</div>
 
 </a>
 
-</div>
+<h2 class="section-title">
+🌿 Science Part 2
+</h2>
+<a href="https://sarthakgomase.github.io/MH-Study-Capsule/sciencep2ch1.pdf" target="_blank" class="card">
 
-<div class="title" style="margin-top:35px;">
-
-🧬 Science Part 2
-
-</div>
-
-<div class="grid">
-
-<a href="Pdfs/sciencep2ch1.pdf" class="card">
-
+<div class="left">
 <div class="icon">1️⃣</div>
+<div class="text">
+<h3>Heredity and Evolution</h3>
+<p>Question & Answers PDF</p>
+</div>
+</div>
 
-<div class="name">Heredity and Evolution</div>
+<div class="arrow">➜</div>
 
 </a>
 
-<a href="Pdfs/sciencep2ch2.pdf" class="card">
+<a href="https://sarthakgomase.github.io/MH-Study-Capsule/sciencep2ch2.pdf" target="_blank" class="card">
 
+<div class="left">
 <div class="icon">2️⃣</div>
+<div class="text">
+<h3>Life Processes in Living Organisms</h3>
+<p>Question & Answers PDF</p>
+</div>
+</div>
 
-<div class="name">Life Processes in Living Organisms Part 1</div>
+<div class="arrow">➜</div>
 
 </a>
 
-<a href="Pdfs/sciencep2ch3.pdf" class="card">
+<a href="https://sarthakgomase.github.io/MH-Study-Capsule/sciencep2ch3.pdf" target="_blank" class="card">
 
+<div class="left">
 <div class="icon">3️⃣</div>
+<div class="text">
+<h3>Heredity</h3>
+<p>Question & Answers PDF</p>
+</div>
+</div>
 
-<div class="name">Life Processes in Living Organisms Part 2</div>
+<div class="arrow">➜</div>
 
 </a>
 
-<a href="Pdfs/sciencep2ch4.pdf" class="card">
+<a href="https://sarthakgomase.github.io/MH-Study-Capsule/sciencep2ch4.pdf" target="_blank" class="card">
 
+<div class="left">
 <div class="icon">4️⃣</div>
+<div class="text">
+<h3>Environmental Management</h3>
+<p>Question & Answers PDF</p>
+</div>
+</div>
 
-<div class="name">Environmental Management</div>
+<div class="arrow">➜</div>
 
 </a>
 
-<a href="Pdfs/sciencep2ch5.pdf" class="card">
+<a href="https://sarthakgomase.github.io/MH-Study-Capsule/sciencep2ch5.pdf" target="_blank" class="card">
 
+<div class="left">
 <div class="icon">5️⃣</div>
+<div class="text">
+<h3>Towards Green Energy</h3>
+<p>Question & Answers PDF</p>
+</div>
+</div>
 
-<div class="name">Towards Green Energy</div>
+<div class="arrow">➜</div>
 
 </a>
+<a href="https://sarthakgomase.github.io/MH-Study-Capsule/sciencep2ch6.pdf" target="_blank" class="card">
 
-<a href="Pdfs/sciencep2ch6.pdf" class="card">
-
+<div class="left">
 <div class="icon">6️⃣</div>
+<div class="text">
+<h3>Animal Classification</h3>
+<p>Question & Answers PDF</p>
+</div>
+</div>
 
-<div class="name">Animal Classification</div>
+<div class="arrow">➜</div>
 
 </a>
 
-<a href="Pdfs/sciencep2ch7.pdf" class="card">
+<a href="https://sarthakgomase.github.io/MH-Study-Capsule/sciencep2ch7.pdf" target="_blank" class="card">
 
+<div class="left">
 <div class="icon">7️⃣</div>
+<div class="text">
+<h3>Introduction to Microbiology</h3>
+<p>Question & Answers PDF</p>
+</div>
+</div>
 
-<div class="name">Introduction to Microbiology</div>
+<div class="arrow">➜</div>
 
 </a>
 
-<a href="Pdfs/sciencep2ch8.pdf" class="card">
+<a href="https://sarthakgomase.github.io/MH-Study-Capsule/sciencep2ch8.pdf" target="_blank" class="card">
 
+<div class="left">
 <div class="icon">8️⃣</div>
+<div class="text">
+<h3>Cell Biology and Biotechnology</h3>
+<p>Question & Answers PDF</p>
+</div>
+</div>
 
-<div class="name">Cell Biology and Biotechnology</div>
+<div class="arrow">➜</div>
 
 </a>
 
-<a href="Pdfs/sciencep2ch9.pdf" class="card">
+<a href="https://sarthakgomase.github.io/MH-Study-Capsule/sciencep2ch9.pdf" target="_blank" class="card">
 
+<div class="left">
 <div class="icon">9️⃣</div>
+<div class="text">
+<h3>Social Health</h3>
+<p>Question & Answers PDF</p>
+</div>
+</div>
 
-<div class="name">Social Health</div>
+<div class="arrow">➜</div>
 
 </a>
 
-<a href="Pdfs/sciencep2ch10.pdf" class="card">
+<a href="https://sarthakgomase.github.io/MH-Study-Capsule/sciencep2ch10.pdf" target="_blank" class="card">
 
+<div class="left">
 <div class="icon">🔟</div>
+<div class="text">
+<h3>Disaster Management</h3>
+<p>Question & Answers PDF</p>
+</div>
+</div>
 
-<div class="name">Disaster Management</div>
+<div class="arrow">➜</div>
 
 </a>
-
-</div>
-</div>
-
 <footer style="
 margin-top:40px;
 padding:30px 20px;
@@ -433,129 +594,139 @@ backdrop-filter:blur(20px);
 ">
 
 <h2 style="
-font-size:22px;
+font-size:20px;
 margin-bottom:10px;
-background:linear-gradient(90deg,#A78BFA,#60A5FA);
+background:linear-gradient(90deg,#8B5CF6,#3B82F6);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 ">
-
 🎓 MH Study Capsule
-
 </h2>
 
 <p style="
 color:#CBD5E1;
-font-size:14px;
+font-size:13px;
 line-height:1.8;
 ">
-
-Premium Questions & Answers for Maharashtra Board Class 10
-
+Premium Study Platform for Maharashtra Board Students
 </p>
 
 <div style="margin:20px 0;">
-
-<a href="dashboard.html" style="
-color:#A78BFA;
-text-decoration:none;
-margin:0 10px;
-">Dashboard</a>
-
-<a href="class10.html" style="
-color:#A78BFA;
-text-decoration:none;
-margin:0 10px;
-">Class 10</a>
 
 <a href="index.html" style="
 color:#A78BFA;
 text-decoration:none;
 margin:0 10px;
-">Home</a>
+font-size:14px;
+font-weight:600;
+">
+Home
+</a>
+
+<a href="dashboard.html" style="
+color:#A78BFA;
+text-decoration:none;
+margin:0 10px;
+font-size:14px;
+font-weight:600;
+">
+Dashboard
+</a>
+
+<a href="class10.html" style="
+color:#A78BFA;
+text-decoration:none;
+margin:0 10px;
+font-size:14px;
+font-weight:600;
+">
+Class 10
+</a>
 
 </div>
 
-<p style="color:#94A3B8;">
-Designed & Developed By
+<p style="
+color:#94A3B8;
+font-size:12px;
+">
+Designed & Developed by
 </p>
 
-<h3 style="margin-top:8px;">
-Sarthak 19.1
+<h3 style="
+margin-top:8px;
+font-size:18px;
+color:#FFFFFF;
+">
+Sarthak Gomase
 </h3>
 
 <p style="
-margin-top:10px;
-color:#A78BFA;
+margin-top:8px;
+font-size:12px;
+color:#8B5CF6;
 ">
-Version 2.0 Premium
+© 2026 MH Study Capsule • All Rights Reserved
 </p>
 
 </footer>
-
 <script>
 
-/* Card Animation */
+/* ==========================
+   Live Search
+========================== */
 
-const cards=document.querySelectorAll(".card");
+const search = document.getElementById("search");
 
-const observer=new IntersectionObserver((entries)=>{
+search.addEventListener("keyup", function () {
 
-entries.forEach(entry=>{
+    const value = this.value.toLowerCase();
 
-if(entry.isIntersecting){
+    document.querySelectorAll(".card").forEach(card => {
 
-entry.target.style.opacity="1";
-entry.target.style.transform="translateY(0)";
+        const text = card.innerText.toLowerCase();
 
-}
+        if (text.includes(value)) {
+            card.style.display = "flex";
+        } else {
+            card.style.display = "none";
+        }
 
-});
-
-});
-
-cards.forEach(card=>{
-
-card.style.opacity="0";
-
-card.style.transform="translateY(40px)";
-
-card.style.transition="all .8s ease";
-
-observer.observe(card);
+    });
 
 });
 
-/* Disable Right Click */
 
-document.addEventListener("contextmenu",e=>e.preventDefault());
+/* ==========================
+   Scroll Animation
+========================== */
 
-/* Disable Some Developer Shortcuts */
+const observer = new IntersectionObserver((entries) => {
 
-document.addEventListener("keydown",function(e){
+    entries.forEach(entry => {
 
-if(
+        if (entry.isIntersecting) {
 
-e.key==="F12" ||
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
 
-(e.ctrlKey && e.shiftKey && e.key==="I") ||
+        }
 
-(e.ctrlKey && e.shiftKey && e.key==="J") ||
+    });
 
-(e.ctrlKey && e.shiftKey && e.key==="C") ||
+},{
+    threshold:0.15
+});
 
-(e.ctrlKey && e.key==="U")
+document.querySelectorAll(".card").forEach(card => {
 
-){
+    card.style.opacity = "0";
+    card.style.transform = "translateY(30px)";
+    card.style.transition = "all .6s ease";
 
-e.preventDefault();
-
-}
+    observer.observe(card);
 
 });
 
 </script>
-
 </body>
-
 </html>
