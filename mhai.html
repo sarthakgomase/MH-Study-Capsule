@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>🚀 MH Study Capsule AI</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+background:#050816;
+color:#fff;
+overflow:hidden;
+
+}
+
+/*==============================
+Universe Background
+==============================*/
+
+.universe{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-5;
+
+background:
+radial-gradient(circle at 20% 20%,rgba(124,58,237,.30),transparent 35%),
+radial-gradient(circle at 80% 70%,rgba(37,99,235,.30),transparent 35%),
+#050816;
+
+}
+
+.universe::before{
+
+content:"";
+
+position:absolute;
+inset:0;
+
+background-image:
+radial-gradient(#fff 1px,transparent 1px);
+
+background-size:55px 55px;
+
+opacity:.12;
+
+animation:stars 80s linear infinite;
+
+}
+
+@keyframes stars{
+
+from{
+
+transform:translateY(0);
+
+}
+
+to{
+
+transform:translateY(-450px);
+
+}
+
+}
+
+/*==============================
+Navbar
+==============================*/
+
+.navbar{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:70px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:0 20px;
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(25px);
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+z-index:1000;
+
+}
+
+.left{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+}
+
+.menu{
+
+font-size:28px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.menu:hover{
+
+color:#A78BFA;
+
+}
+
+.logo{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+font-size:22px;
+
+font-weight:700;
+
+}
+
+.logo img{
+
+width:45px;
+
+height:45px;
+
+border-radius:50%;
+
+}
+
+.newChat{
+
+padding:10px 22px;
+
+border:none;
+
+border-radius:30px;
+
+background:linear-gradient(135deg,#7C3AED,#2563EB);
+
+color:white;
+
+font-size:15px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.35s;
+
+}
+
+.newChat:hover{
+
+transform:translateY(-3px);
+
+}
+
+/*==============================
+Sidebar
+==============================*/
+
+.sidebar{
+
+position:fixed;
+
+left:-290px;
+
+top:0;
+
+width:280px;
+
+height:100%;
+
+background:rgba(12,12,30,.97);
+
+backdrop-filter:blur(25px);
+
+border-right:1px solid rgba(255,255,255,.08);
+
+transition:.35s;
+
+z-index:1500;
+
+overflow-y:auto;
+
+}
+
+.sidebarTitle{
+
+padding:25px;
+
+font-size:22px;
+
+font-weight:700;
+
+color:#A78BFA;
+
+}
+
+.history{
+
+width:90%;
+
+margin:12px auto;
+
+padding:15px;
+
+border:none;
+
+border-radius:15px;
+
+background:rgba(255,255,255,.05);
+
+color:white;
+
+font-size:15px;
+
+text-align:left;
+
+cursor:pointer;
+
+transition:.3s;
+
+display:block;
+
+}
+
+.history:hover{
+
+background:#7C3AED;
+
+transform:translateX(6px);
+
+}
+
+/*==============================
+Chat Area
+==============================*/
+
+.chat{
+
+height:calc(100vh - 150px);
+
+margin-top:70px;
+
+overflow-y:auto;
+
+padding:25px;
+
+}
+
+.chat::-webkit-scrollbar{
+
+width:6px;
+
+}
+
+.chat::-webkit-scrollbar-thumb{
+
+background:#7C3AED;
+
+border-radius:20px;
+
+}
+
+.message{
+
+max-width:80%;
+
+padding:18px;
+
+margin-bottom:18px;
+
+border-radius:20px;
+
+line-height:1.8;
+
+font-size:15px;
+
+animation:fade .4s ease;
+
+}
+
+.user{
+
+margin-left:auto;
+
+background:#2563EB;
+
+}
+
+.ai{
+
+background:rgba(255,255,255,.06);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+.title{
+
+font-size:34px;
+
+font-weight:700;
+
+margin-bottom:10px;
+
+background:linear-gradient(90deg,#A78BFA,#60A5FA);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+.subtitle{
+
+color:#CBD5E1;
+
+line-height:1.8;
+
+margin-bottom:25px;
+
+}
+
+.quick{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:12px;
+
+margin-top:25px;
+
+}
+
+.quick button{
+
+padding:12px 18px;
+
+border:none;
+
+border-radius:30px;
+
+background:rgba(255,255,255,.08);
+
+color:white;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.quick button:hover{
+
+background:#7C3AED;
+
+transform:translateY(-3px);
+
+}
+
+/*==============================
+Input Area
+==============================*/
+
+.inputArea{
+
+position:fixed;
+
+bottom:15px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:95%;
+
+max-width:950px;
+
+display:flex;
+
+gap:10px;
+
+padding:12px;
+
+background:rgba(255,255,255,.06);
+
+backdrop-filter:blur(25px);
+
+border-radius:25px;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.inputArea input{
+
+flex:1;
+
+background:transparent;
+
+border:none;
+
+outline:none;
+
+color:white;
+
+font-size:16px;
+
+padding:15px;
+
+}
+
+.iconBtn{
+
+width:50px;
+
+height:50px;
+
+border:none;
+
+border-radius:50%;
+
+background:linear-gradient(135deg,#7C3AED,#2563EB);
+
+color:white;
+
+font-size:20px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.iconBtn:hover{
+
+transform:scale(1.08);
+
+box-shadow:0 0 20px rgba(124,58,237,.6);
+
+}
+
+.sendBtn{
+
+padding:0 25px;
+
+height:50px;
+
+border:none;
+
+border-radius:30px;
+
+background:linear-gradient(135deg,#7C3AED,#2563EB);
+
+color:white;
+
+font-size:16px;
+
+font-weight:600;
+
+cursor:pointer;
+
+}
+
+/*==============================
+Footer
+==============================*/
+
+.footer{
+
+position:fixed;
+
+bottom:85px;
+
+width:100%;
+
+text-align:center;
+
+font-size:13px;
+
+color:#CBD5E1;
+
+}
+
+.footer span{
+
+color:#A78BFA;
+
+font-weight:700;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="universe"></div>
+
+<div class="sidebar" id="sidebar">
+
+<div class="sidebarTitle">
+
+🚀 MH Study Capsule AI
+
+</div>
+
+<button class="history">💬 New Chat</button>
+
+<button class="history">📚 Science</button>
+
+<button class="history">📐 Mathematics</button>
+
+<button class="history">🧪 Physics</button>
+
+<button class="history">⚛ Chemistry</button>
+
+<button class="history">🌿 Biology</button>
+
+<button class="history">📖 English</button>
+
+<button class="history">🌍 History</button>
+
+<button class="history">🗺 Geography</button>
+
+<button class="history">🎯 Board Preparation</button>
+
+</div>
+
+<div class="navbar">
+
+<div class="left">
+
+<div class="menu" onclick="toggleSidebar()">
+
+☰
+
+</div>
+
+<div class="logo">
+
+<img src="logo.png">
+
+<span>MH Study Capsule AI</span>
+
+</div>
+
+</div>
+
+<button class="newChat">
+
+💬 New Chat
+
+</button>
+
+</div>
+
+<div class="chat" id="chat">
+
+<div class="message ai">
+
+<div class="title">
+
+🚀 Welcome to MH Study Capsule AI
+
+</div>
+
+<div class="subtitle">
+
+Your AI Study Companion for Maharashtra Board Students (Classes 10 • 11 • 12)
+
+</div>
+
+<p>
+
+Ask any study question and get instant explanations.
+
+</p>
+
+<div class="quick">
+
+<button>📚 Explain Chapter</button>
+
+<button>📝 Solve Numericals</button>
+
+<button>🧪 Generate MCQs</button>
+
+<button>📖 Summary</button>
+
+<button>🎯 Board Prep</button>
+
+<button>📄 Previous Papers</button>
+
+</div>
+
+</div>
+
+</div>
+<!-- ===========================
+Input Area
+=========================== -->
+
+<div class="inputArea">
+
+<input type="file" id="imageUpload" hidden>
+
+<button class="iconBtn" id="uploadBtn">📎</button>
+
+<input
+type="text"
+id="question"
+placeholder="Ask MH Study Capsule AI anything...">
+
+<button class="iconBtn" id="voiceBtn">🎤</button>
+
+<button class="iconBtn" id="themeBtn">🌙</button>
+
+<button class="sendBtn" id="send">
+
+➤ Send
+
+</button>
+
+</div>
+
+<script>
+
+const chat=document.getElementById("chat");
+const input=document.getElementById("question");
+const send=document.getElementById("send");
+
+let open=false;
+
+function toggleSidebar(){
+
+const sidebar=document.getElementById("sidebar");
+
+sidebar.style.left=open?"-290px":"0";
+
+open=!open;
+
+}
+
+function addUser(text){
+
+const div=document.createElement("div");
+
+div.className="message user";
+
+div.innerHTML="👤 "+text;
+
+chat.appendChild(div);
+
+chat.scrollTop=chat.scrollHeight;
+
+}
+
+function typing(){
+
+const div=document.createElement("div");
+
+div.className="message ai";
+
+div.id="typing";
+
+div.innerHTML="🤖 Thinking...";
+
+chat.appendChild(div);
+
+chat.scrollTop=chat.scrollHeight;
+
+}
+
+function stopTyping(){
+
+const t=document.getElementById("typing");
+
+if(t)t.remove();
+
+}
+
+function addAI(text){
+
+const div=document.createElement("div");
+
+div.className="message ai";
+
+chat.appendChild(div);
+
+let i=0;
+
+function type(){
+
+if(i<=text.length){
+
+div.innerHTML="🤖<br><br>"+text.substring(0,i);
+
+i++;
+
+chat.scrollTop=chat.scrollHeight;
+
+setTimeout(type,15);
+
+}
+
+}
+
+type();
+
+}
+
+send.onclick=function(){
+
+const q=input.value.trim();
+
+if(q==="") return;
+
+addUser(q);
+
+input.value="";
+
+typing();
+
+setTimeout(()=>{
+
+stopTyping();
+
+addAI("This is the demo version of MH Study Capsule AI. After connecting an AI API, it will answer Class 10, 11 and 12 questions instantly.");
+
+},1500);
+
+}
+
+input.addEventListener("keypress",e=>{
+
+if(e.key==="Enter") send.click();
+
+});
+
+document.getElementById("uploadBtn").onclick=function(){
+
+document.getElementById("imageUpload").click();
+
+};
+
+document.getElementById("imageUpload").addEventListener("change",function(){
+
+if(this.files.length){
+
+addUser("📎 Uploaded: "+this.files[0].name);
+
+}
+
+});
+
+if("webkitSpeechRecognition" in window){
+
+const recognition=new webkitSpeechRecognition();
+
+recognition.lang="en-IN";
+
+document.getElementById("voiceBtn").onclick=()=>recognition.start();
+
+recognition.onresult=function(e){
+
+input.value=e.results[0][0].transcript;
+
+};
+
+}
+
+document.getElementById("themeBtn").onclick=function(){
+
+document.body.classList.toggle("light");
+
+};
+
+</script>
+<style>
+
+/*==============================
+Premium AI Effects
+==============================*/
+
+.light{
+
+background:#f4f7ff;
+
+color:#111;
+
+}
+
+.light .navbar{
+
+background:#ffffff;
+
+}
+
+.light .message.ai{
+
+background:#ffffff;
+
+color:#111;
+
+}
+
+.light .inputArea{
+
+background:#ffffff;
+
+}
+
+.actionBar{
+
+margin-top:15px;
+
+display:flex;
+
+gap:10px;
+
+flex-wrap:wrap;
+
+}
+
+.actionBtn{
+
+padding:10px 15px;
+
+border:none;
+
+border-radius:20px;
+
+background:rgba(255,255,255,.08);
+
+color:white;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.actionBtn:hover{
+
+background:#7C3AED;
+
+transform:translateY(-3px);
+
+}
+
+.light .actionBtn{
+
+background:#eeeeee;
+
+color:#111;
+
+}
+
+@keyframes glow{
+
+0%{
+
+box-shadow:0 0 10px rgba(124,58,237,.3);
+
+}
+
+50%{
+
+box-shadow:0 0 30px rgba(124,58,237,.8);
+
+}
+
+100%{
+
+box-shadow:0 0 10px rgba(124,58,237,.3);
+
+}
+
+}
+
+.newChat{
+
+animation:glow 2s infinite;
+
+}
+
+.sendBtn{
+
+animation:glow 2.5s infinite;
+
+}
+
+</style>
+
+<script>
+
+function addAI(text){
+
+const div=document.createElement("div");
+
+div.className="message ai";
+
+div.innerHTML=
+
+`
+<div style="display:flex;gap:12px;align-items:flex-start;">
+
+<div style="
+
+width:45px;
+height:45px;
+
+border-radius:50%;
+
+background:linear-gradient(135deg,#7C3AED,#2563EB);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:22px;
+
+flex-shrink:0;
+
+">
+
+🤖
+
+</div>
+
+<div>
+
+${text}
+
+<div class="actionBar">
+
+<button class="actionBtn" onclick="copyText(this)">📋 Copy</button>
+
+<button class="actionBtn">👍</button>
+
+<button class="actionBtn">👎</button>
+
+<button class="actionBtn">🔄 Regenerate</button>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+chat.appendChild(div);
+
+chat.scrollTop=chat.scrollHeight;
+
+}
+
+function copyText(button){
+
+const text=button.parentElement.parentElement.innerText;
+
+navigator.clipboard.writeText(text);
+
+button.innerHTML="✅ Copied";
+
+setTimeout(()=>{
+
+button.innerHTML="📋 Copy";
+
+},1500);
+
+}
+
+</script>
+
+</body>
+
+</html>
